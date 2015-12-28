@@ -8,12 +8,16 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Вероятность головной боли:"
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal"
         android:id="@+id/textView" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Нет данных."
+        android:layout_gravity="center_horizontal"
+        android:textSize="15sp"
         android:id="@+id/headacheTextView"
         android:textStyle="bold"
         android:typeface="serif" />
@@ -22,13 +26,18 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Совет:"
+        android:layout_gravity="center_horizontal"
+        android:textSize="15sp"
         android:id="@+id/textView2" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Пройдите анкетирование"
+        android:layout_gravity="center_horizontal"
+        android:textSize="15sp"
         android:id="@+id/sovetTextView"
+
         android:textStyle="bold"
         android:typeface="serif" />
 
