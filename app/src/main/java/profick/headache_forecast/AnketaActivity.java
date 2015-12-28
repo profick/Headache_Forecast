@@ -41,6 +41,7 @@ public class AnketaActivity extends AppCompatActivity implements View.OnClickLis
         if (savedInstanceState != null) {
             for (int i = 0; i < 10; i++) {
                 checkBoxes[i].setChecked(savedInstanceState.getBoolean("checkBox" + String.valueOf(i), false));
+                checkBoxes[i].setEnabled(savedInstanceState.getBoolean("checkBoxEnabled" + String.valueOf(i), true));
             }
         }
 
@@ -51,6 +52,7 @@ public class AnketaActivity extends AppCompatActivity implements View.OnClickLis
         super.onSaveInstanceState(outState);
         for (int i = 0; i < 10; i++) {
             outState.putBoolean("checkBox" + String.valueOf(i), checkBoxes[i].isChecked());
+            outState.putBoolean("checkBoxEnabled" + String.valueOf(i), checkBoxes[i].isEnabled());
         }
     }
 
@@ -59,9 +61,16 @@ public class AnketaActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.checkBox9:
-                for (int i = 0; i < 9; i++) {
-                    checkBoxes[i].setChecked(false);
+            case R.id.checkBox10:
+                if (checkBoxes[9].isChecked()) {
+                    for (int i = 0; i < 9; i++) {
+                        checkBoxes[i].setChecked(false);
+                        checkBoxes[i].setEnabled(false);
+                    }
+                } else {
+                    for (int i = 0; i < 9; i++) {
+                        checkBoxes[i].setEnabled(true);
+                    }
                 }
                 break;
             case R.id.finishedButton:
