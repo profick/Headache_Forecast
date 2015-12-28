@@ -8,13 +8,16 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Вероятность головной боли:"
-        android:id="@+id/textView" />
+        android:id="@+id/textView"
+        android:layout_centerHorizontal="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Прости, но 100 процентов"
-        android:id="@+id/headacheTextView"
+        android:id="@+id/verTextView"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:typeface="serif" />
     <TextView
@@ -22,13 +25,16 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Совет:"
-        android:id="@+id/textView2" />
+        android:id="@+id/textView2"
+        android:layout_centerHorizontal="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Ложись и спи, чувак"
         android:id="@+id/sovetTextView"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:typeface="serif" />
 

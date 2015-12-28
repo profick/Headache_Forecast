@@ -65,5 +65,33 @@
             android:textColor="#ffffff"
             android:layout_alignTop="@+id/button2"
             android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/lastUpdate"
+            android:id="@+id/lastUpdateTextView"
+            android:textStyle="bold"
+            android:layout_above="@+id/cityEditText"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cityEditText"
+            android:text="Впишите название города (на английском)"
+            android:layout_above="@+id/button2"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Обновить"
+            android:id="@+id/updateButton"
+            android:layout_above="@+id/lastUpdateTextView"
+            android:layout_alignParentStart="true" />
+
     </RelativeLayout>
 </LinearLayout>

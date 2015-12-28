@@ -28,10 +28,6 @@ public class WeatherService {
         this.callback = callback;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
     public void refreshWeather(String arg) {
 
         this.location = arg;

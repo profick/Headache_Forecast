@@ -45,7 +45,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Заполнить анкету"
         android:id="@+id/anketaActivityButton"
@@ -53,21 +53,44 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#2929ff"
-        android:textColor="#ffffff"
-        android:layout_toLeftOf="@+id/conditionTextView"
-        android:layout_toStartOf="@+id/conditionTextView" />
+        android:textColor="#ffffff" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Посмотреть прогноз"
         android:id="@+id/resultActivityButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/conditionTextView"
         android:background="#2929ff"
-        android:textColor="#ffffff"
-        android:layout_toRightOf="@+id/conditionTextView" />
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/lastUpdate"
+        android:id="@+id/lastUpdateTextView"
+        android:textStyle="bold"
+        android:layout_above="@+id/cityEditText"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cityEditText"
+        android:text="Впишите название города (на английском)"
+        android:layout_above="@+id/anketaActivityButton"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Обновить"
+        android:id="@+id/updateButton"
+        android:layout_above="@+id/lastUpdateTextView"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

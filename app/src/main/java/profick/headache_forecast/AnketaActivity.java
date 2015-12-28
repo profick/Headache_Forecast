@@ -15,6 +15,7 @@ public class AnketaActivity extends AppCompatActivity implements View.OnClickLis
 
     private static final String RISING = "rising";
     private static final String HEADACHE_PERCENT = "headache_percent";
+    private static final String PREFERENCES = "HeadachePreferences";
 
     private SharedPreferences sharedPreferences;
 
@@ -35,24 +36,11 @@ public class AnketaActivity extends AppCompatActivity implements View.OnClickLis
             checkBoxes[i - 1] = (CheckBox) findViewById(getResources().getIdentifier("checkBox" + String.valueOf(i), "id", getPackageName()));
         }
 
-
-
-//        checkBoxes[0] = (CheckBox) findViewById(R.id.checkBox1);
-//        checkBoxes[1] = (CheckBox) findViewById(R.id.checkBox2);
-//        checkBoxes[2] = (CheckBox) findViewById(R.id.checkBox3);
-//        checkBoxes[3] = (CheckBox) findViewById(R.id.checkBox4);
-//        checkBoxes[4] = (CheckBox) findViewById(R.id.checkBox5);
-//        checkBoxes[5] = (CheckBox) findViewById(R.id.checkBox6);
-//        checkBoxes[6] = (CheckBox) findViewById(R.id.checkBox7);
-//        checkBoxes[7] = (CheckBox) findViewById(R.id.checkBox8);
-//        checkBoxes[8] = (CheckBox) findViewById(R.id.checkBox9);
-//        checkBoxes[9] = (CheckBox) findViewById(R.id.checkBox10);
-
     }
 
     @Override
     public void onClick(View v) {
-        sharedPreferences = getPreferences(MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(HEADACHE_PERCENT, makeResult(checkBoxes));
         editor.apply();
@@ -79,7 +67,7 @@ public class AnketaActivity extends AppCompatActivity implements View.OnClickLis
                 }
             }
         }
-        sharedPreferences = getPreferences(MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE);
         boolean flag = checkBoxes[8].isChecked() || sharedPreferences.getInt(RISING, -1) == 2;
 
         if (flag) {

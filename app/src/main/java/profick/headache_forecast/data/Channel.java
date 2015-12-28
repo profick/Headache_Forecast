@@ -11,6 +11,12 @@ public class Channel implements JSONPopulator {
     private Item item;
     private Atmosphere atmosphere;
     private Astronomy astronomy;
+    private Location location;
+    private String lastBuildDate;
+
+    public Location getLocation() {
+        return location;
+    }
 
     public Units getUnits() {
         return units;
@@ -22,6 +28,10 @@ public class Channel implements JSONPopulator {
 
     public Atmosphere getAtmosphere() {
         return atmosphere;
+    }
+
+    public String getLastBuildDate() {
+        return lastBuildDate;
     }
 
     public Astronomy getAstronomy() {
@@ -42,5 +52,10 @@ public class Channel implements JSONPopulator {
 
         astronomy = new Astronomy();
         astronomy.populate(data.optJSONObject("astronomy"));
+
+        location = new Location();
+        location.populate(data.optJSONObject("location"));
+
+        lastBuildDate = data.optString("lastBuildDate");
     }
 }
