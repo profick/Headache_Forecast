@@ -45,9 +45,10 @@
         android:textStyle="bold" />
 
     <Button
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="Заполнить анкету"
+        android:textSize="10sp"
         android:id="@+id/anketaActivityButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -56,9 +57,10 @@
         android:textColor="#ffffff" />
 
     <Button
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="Посмотреть прогноз"
+        android:textSize="10sp"
         android:id="@+id/resultActivityButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -71,6 +73,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/lastUpdate"
+        android:textSize="15sp"
         android:id="@+id/lastUpdateTextView"
         android:textStyle="bold"
         android:layout_above="@+id/cityEditText"
@@ -80,15 +83,17 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/cityEditText"
+        android:textSize="15sp"
         android:text="Впишите название города (на английском)"
         android:layout_above="@+id/anketaActivityButton"
         android:layout_alignParentStart="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:text="Обновить"
+        android:textSize="10sp"
         android:id="@+id/updateButton"
         android:layout_above="@+id/lastUpdateTextView"
         android:layout_alignParentStart="true" />

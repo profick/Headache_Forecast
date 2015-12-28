@@ -28,6 +28,29 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         headacheTextView = (TextView) findViewById(R.id.headacheTextView);
         sovetTextView = (TextView) findViewById(R.id.sovetTextView);
 
+        if (savedInstanceState != null) {
+            headacheTextView.setText(savedInstanceState.getString("headache"));
+            sovetTextView.setText(savedInstanceState.getString("sovet"));
+        } else {
+            showResult();
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("headache", headacheTextView.getText().toString());
+        outState.putString("sovet", sovetTextView.getText().toString());
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(this, WeatherActivity.class);
+        startActivity(intent);
+    }
+
+    private void showResult() {
         sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE);
         int headachePercent = sharedPreferences.getInt(HEADACHE_PERCENT, -1);
         if (headachePercent == -1) {
@@ -51,12 +74,5 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                 sovetTextView.setText(R.string.sovet5);
             }
         }
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        Intent intent = new Intent(this, WeatherActivity.class);
-        startActivity(intent);
     }
 }

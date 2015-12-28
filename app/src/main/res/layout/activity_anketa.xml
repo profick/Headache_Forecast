@@ -94,17 +94,20 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ничего из вышепречисленного"
+                android:text="У Вас болела голова"
                 android:id="@+id/checkBox9"
-                android:checked="false"
-                />
+                android:checked="false" />
+
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="У Вас болела голова"
+                android:text="Ничего из вышепречисленного"
                 android:id="@+id/checkBox10"
-                android:checked="false" />
+                android:checked="false"
+                />
+
+
 
 
         </LinearLayout>

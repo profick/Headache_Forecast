@@ -36,7 +36,23 @@ public class AnketaActivity extends AppCompatActivity implements View.OnClickLis
             checkBoxes[i - 1] = (CheckBox) findViewById(getResources().getIdentifier("checkBox" + String.valueOf(i), "id", getPackageName()));
         }
 
+        if (savedInstanceState != null) {
+            for (int i = 0; i < 10; i++) {
+                checkBoxes[i].setChecked(savedInstanceState.getBoolean("checkBox" + String.valueOf(i), false));
+            }
+        }
+
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        for (int i = 0; i < 10; i++) {
+            outState.putBoolean("checkBox" + String.valueOf(i), checkBoxes[i].isChecked());
+        }
+    }
+
+
 
     @Override
     public void onClick(View v) {

@@ -51,7 +51,8 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Заполнить анкету"
-            android:id="@+id/button2"
+            android:id="@+id/anketaActivityButton"
+            android:textSize="12sp"
             android:background="#2929ff"
             android:textColor="#ffffff"
             android:layout_alignParentBottom="true" />
@@ -60,10 +61,11 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Посмотреть прогноз"
-            android:id="@+id/button3"
+            android:id="@+id/resultActivityButton"
+            android:textSize="12sp"
             android:background="#2929ff"
             android:textColor="#ffffff"
-            android:layout_alignTop="@+id/button2"
+            android:layout_alignTop="@+id/anketaActivityButton"
             android:layout_alignParentEnd="true" />
 
         <TextView
@@ -71,6 +73,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/lastUpdate"
+            android:textSize="15sp"
             android:id="@+id/lastUpdateTextView"
             android:textStyle="bold"
             android:layout_above="@+id/cityEditText"
@@ -80,8 +83,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/cityEditText"
+            android:textSize="15sp"
             android:text="Впишите название города (на английском)"
-            android:layout_above="@+id/button2"
+            android:layout_above="@+id/anketaActivityButton"
             android:layout_alignParentEnd="true" />
 
         <Button
@@ -89,6 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Обновить"
+            android:textSize="12sp"
             android:id="@+id/updateButton"
             android:layout_above="@+id/lastUpdateTextView"
             android:layout_alignParentStart="true" />
