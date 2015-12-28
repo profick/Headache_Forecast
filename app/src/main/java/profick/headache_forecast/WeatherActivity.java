@@ -28,8 +28,8 @@ public class WeatherActivity extends AppCompatActivity implements WeatherService
     private TextView conditionTextView;
     private TextView locationTextView;
 
-    private Button anketaButton;
-    private Button resultButton;
+    private Button anketaActivityButton;
+    private Button resultActivityButton;
 
     private WeatherService service;
     private ProgressDialog dialog;
@@ -44,8 +44,8 @@ public class WeatherActivity extends AppCompatActivity implements WeatherService
         temperatureTextView = (TextView) findViewById(R.id.temperatureTextView);
         conditionTextView = (TextView) findViewById(R.id.conditionTextView);
         locationTextView = (TextView) findViewById(R.id.locationTextView);
-        anketaButton = (Button) findViewById(R.id.anketaButton); anketaButton.setOnClickListener(this);
-        resultButton = (Button) findViewById(R.id.resultButton); resultButton.setOnClickListener(this);
+        anketaActivityButton = (Button) findViewById(R.id.anketaActivityButton); anketaActivityButton.setOnClickListener(this);
+        resultActivityButton = (Button) findViewById(R.id.resultActivityButton); resultActivityButton.setOnClickListener(this);
 
         service = new WeatherService(this);
         dialog = new ProgressDialog(this);
@@ -61,11 +61,11 @@ public class WeatherActivity extends AppCompatActivity implements WeatherService
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()) {
-            case R.id.anketaButton:
+            case R.id.anketaActivityButton:
                 intent = new Intent(this, AnketaActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.resultButton:
+            case R.id.resultActivityButton:
                 intent = new Intent(this, ResultActivity.class);
                 startActivity(intent);
                 break;
@@ -97,7 +97,7 @@ public class WeatherActivity extends AppCompatActivity implements WeatherService
         temperatureTextView.setText(item.getCondition().getTemperature() + "\u00B0" + channel.getUnits().getTemperature());
         conditionTextView.setText(item.getCondition().getDescription());
         locationTextView.setText(service.getLocation());
-        Toast.makeText(this, "Загрузка завершена", Toast.LENGTH_SHORT);
+        Toast.makeText(this, "Загрузка завершена", Toast.LENGTH_SHORT).show();
     }
 
     @Override
