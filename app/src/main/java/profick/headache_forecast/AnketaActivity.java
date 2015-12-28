@@ -64,7 +64,7 @@ public class AnketaActivity extends AppCompatActivity implements View.OnClickLis
                     checkBoxes[i].setChecked(false);
                 }
                 break;
-            default:
+            case R.id.finishedButton:
                 sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt(HEADACHE_PERCENT, makeResult(checkBoxes));
