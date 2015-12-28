@@ -77,6 +77,9 @@ public class WeatherService {
 
                     int count = queryResults.optInt("count");
                     if (count == 0) {
+                        if (location.equals("")) {
+                            callback.serviceFailure(new LocationWeatherException("Введите название города"));
+                        }
                         callback.serviceFailure(new LocationWeatherException("Нет информации для: " + location));
                         return;
                     }

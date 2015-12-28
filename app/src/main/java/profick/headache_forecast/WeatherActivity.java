@@ -61,7 +61,7 @@ public class WeatherActivity extends AppCompatActivity implements WeatherService
         locationTextView = (TextView) findViewById(R.id.locationTextView);
         lastUpdateTextView = (TextView) findViewById(R.id.lastUpdateTextView);
 
-        cityEditText = (EditText) findViewById(R.id.cityEditText);
+        cityEditText = (EditText) findViewById(R.id.cityEditText); cityEditText.setOnClickListener(this);
 
         anketaActivityButton = (Button) findViewById(R.id.anketaActivityButton); anketaActivityButton.setOnClickListener(this);
         resultActivityButton = (Button) findViewById(R.id.resultActivityButton); resultActivityButton.setOnClickListener(this);
@@ -102,6 +102,9 @@ public class WeatherActivity extends AppCompatActivity implements WeatherService
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()) {
+            case R.id.cityEditText:
+                cityEditText.setText("");
+                break;
             case R.id.anketaActivityButton:
                 intent = new Intent(this, AnketaActivity.class);
                 startActivity(intent);
@@ -116,7 +119,7 @@ public class WeatherActivity extends AppCompatActivity implements WeatherService
                 dialog.setMessage("Loading...");
                 dialog.show();
 
-                if (cityEditText.getText().toString().equals("Впишите название города (на английском)")) {
+                if (cityEditText.getText().toString().equals("Введите название города (на английском)")) {
                     cityEditText.setText("St. Petersburg");
                 }
                 service.refreshWeather(cityEditText.getText().toString());

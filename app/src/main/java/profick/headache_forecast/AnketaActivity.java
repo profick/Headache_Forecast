@@ -36,6 +36,8 @@ public class AnketaActivity extends AppCompatActivity implements View.OnClickLis
             checkBoxes[i - 1] = (CheckBox) findViewById(getResources().getIdentifier("checkBox" + String.valueOf(i), "id", getPackageName()));
         }
 
+        checkBoxes[9].setOnClickListener(this);
+
         if (savedInstanceState != null) {
             for (int i = 0; i < 10; i++) {
                 checkBoxes[i].setChecked(savedInstanceState.getBoolean("checkBox" + String.valueOf(i), false));
@@ -56,15 +58,25 @@ public class AnketaActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(HEADACHE_PERCENT, makeResult(checkBoxes));
-        editor.apply();
+        switch (v.getId()) {
+            case R.id.checkBox9:
+                for (int i = 0; i < 9; i++) {
+                    checkBoxes[i].setChecked(false);
+                }
+                break;
+            default:
+                sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt(HEADACHE_PERCENT, makeResult(checkBoxes));
+                editor.apply();
 
-        Toast.makeText(this, "Анкета заполнена", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Анкета заполнена", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, WeatherActivity.class);
-        startActivity(intent);
+                Intent intent = new Intent(this, WeatherActivity.class);
+                startActivity(intent);
+                break;
+        }
+
     }
 
     private int makeResult(CheckBox[] checkBoxes) {
