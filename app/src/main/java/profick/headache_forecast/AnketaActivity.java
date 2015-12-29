@@ -93,8 +93,8 @@ public class AnketaActivity extends AppCompatActivity implements View.OnClickLis
         for (int i = 0; i < 8; i++) {
             if (checkBoxes[i].isChecked()) {
                 switch (i) {
-                    case 0: sum+=10; break;
-                    case 1: sum+=16; break;
+                    case 0: sum+=35; break;
+                    case 1: sum+=36; break;
                     case 2: sum+=2; break;
                     case 3: sum+=6; break;
                     case 4: sum+=4; break;
@@ -108,11 +108,11 @@ public class AnketaActivity extends AppCompatActivity implements View.OnClickLis
         boolean flag = checkBoxes[8].isChecked() || sharedPreferences.getInt(RISING, -1) == 2;
 
         if (flag) {
-            sum += 1;
+            sum += 10;
         }
-        sum /= 87;
+        sum /= (87 + 25 + 20);
         if (flag) {
-            sum += 1/45;
+            sum += 10/(87 + 25 + 20);
         }
 
         if (checkBoxes[9].isChecked()) {
